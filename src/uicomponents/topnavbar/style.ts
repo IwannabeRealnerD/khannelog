@@ -34,4 +34,11 @@ export const TopNavWrapper = styled.div`
     margin-block-start: 0px;
     margin-block-end: 0px;
   }
+  button {
+    background-color: transparent;
+    padding-left: 0.1em;
+    color: white;
+    border: none;
+    background: none;
+  }
 `;
