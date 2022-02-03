@@ -33,12 +33,18 @@ export const TopNavWrapper = styled.div`
     margin-bottom: 0px;
     margin-block-start: 0px;
     margin-block-end: 0px;
+    cursor: pointer;
   }
   button {
-    background-color: transparent;
-    padding-left: 0.1em;
+    margin-left: 0.4em;
     color: white;
     border: none;
     background: none;
+    @media (hover: hover) {
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
   }
 `;

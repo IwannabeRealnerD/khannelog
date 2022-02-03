@@ -6,7 +6,9 @@ export const TopNavBar: NextPage = () => {
   return (
     <Styled.TopNavBg>
       <Styled.TopNavWrapper>
-        <h1>khannelog</h1>
+        <NextLink href="/">
+          <h1>khannelog</h1>
+        </NextLink>
         <div>
           <NextLink href="/">
             <button type="button">home</button>
