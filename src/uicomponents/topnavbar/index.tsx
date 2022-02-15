@@ -1,8 +1,15 @@
+import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 import * as Styled from "./style";
 
 export const TopNavBar: NextPage = () => {
+  const router = useRouter();
+  const [currentMenu, setCurrentMenu] = useState(router.asPath);
+  useEffect(() => {
+    setCurrentMenu(() => router.asPath);
+  }, [router.asPath]);
   return (
     <Styled.TopNavBg>
       <Styled.TopNavWrapper>

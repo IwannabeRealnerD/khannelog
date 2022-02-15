@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { maximumWidth } from "../../../styles/responsivevars";
 
 export const TopNavBg = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
