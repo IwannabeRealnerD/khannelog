@@ -1,1 +1,1 @@
-export const maximumWidth: number = 1110;
+export const maximumWidth: number = 1010;

@@ -24,7 +24,7 @@ export const TopNavWrapper = styled.div`
   @media only screen and (min-width: ${maximumWidth}px) {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1100px;
+    max-width: 1000px;
   }
   h1 {
     font-family: "Inknut Antiqua", serif;
@@ -35,16 +35,16 @@ export const TopNavWrapper = styled.div`
     margin-block-end: 0px;
     cursor: pointer;
   }
-  button {
-    margin-left: 0.4em;
-    color: white;
-    border: none;
-    background: none;
-    @media (hover: hover) {
-      &:hover {
-        background-color: white;
-        color: black;
-      }
+`;
+export const MenuButton = styled.button`
+  margin-left: 0.4em;
+  color: white;
+  border: none;
+  background: none;
+  @media (hover: hover) {
+    &:hover {
+      background-color: white;
+      color: black;
     }
   }
 `;

@@ -11,16 +11,17 @@ const GlobalStyle = createGlobalStyle`
         @media only screen and (min-width: ${maximumWidth}px) {
             margin-left: auto;
             margin-right: auto;
-            max-width: 1100px;
+            max-width: 1000px;
         }
     }
 
-    h1 {
-        font-size:1.3em;
+    h2 {
+        font-size:1.2em;
         margin-top: 0px;
         margin-bottom: 0px;
         margin-block-start: 0px;
         margin-block-end: 0px;
+        font-family: "Inknut Antiqua", serif;
     }
 
     button {
