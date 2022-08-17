@@ -1,9 +1,6 @@
 ---
 id: LifeLogIntro
+sidebar_position: 1
 ---
 
-# LifeLog
-
-## 인생에 관한 블로그
-
-- 디자인을 위한 이미지 사용 시 -> 화면 낭독기 이용자들에게 필요 없는 이미지일 경우
+# LifeLog.tsx
