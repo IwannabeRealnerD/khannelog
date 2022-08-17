@@ -65,11 +65,16 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "intro",
+            docId: "LifeLog/LifeLogIntro",
             position: "left",
-            label: "Tutorial",
+            label: "LifeLog",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          {
+            type: "doc",
+            docId: "DeveLog/DeveLogIntro",
+            position: "left",
+            label: "Develog",
+          },
           {
             href: "https://github.com/facebook/docusaurus",
             label: "GitHub",
