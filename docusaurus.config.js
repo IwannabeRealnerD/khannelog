@@ -64,13 +64,13 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "DeveLog/DeveLogIntro",
+            docId: "develog/intro",
             position: "left",
             label: "Develog",
           },
           {
             type: "doc",
-            docId: "LifeLog/intro",
+            docId: "lifelog/intro",
             position: "left",
             label: "LifeLog",
           },
