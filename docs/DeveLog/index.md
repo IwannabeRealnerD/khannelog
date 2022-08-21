@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Develog.tsx
+# index.tsx
 
 ## Develog?
 

@@ -14,4 +14,4 @@ tags: [아크라포빅, R1250RS, 구조변경]
 - 105 데시벨 이상으로 구변 못받았다는 사람은... `본적이 없습니다.`
 - 실제 구조변경 시 `문제 없이 통과한 서류`입니다. - 2022년 2월 구조변경 성공
 
-클릭하세요! - [다운로드 링크](https://1drv.ms/u/s!ArakTMwyPqY2grc0_FvvScsd6Y4KgA?e=gaajCc)
+클릭하세요! - [구조변경 문서 다운로드 링크](https://1drv.ms/u/s!ArakTMwyPqY2grc0_FvvScsd6Y4KgA?e=gaajCc)
