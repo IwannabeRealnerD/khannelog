@@ -20,9 +20,9 @@ const sidebars = {
   deveLogSidebar: [
     "develog/index",
     {
-      type: "link",
+      type: "doc",
       label: "A11y",
-      href: "develog/a11y",
+      id: "develog/a11y/index",
     },
   ],
   r1250rsSideBar: [
@@ -32,9 +32,9 @@ const sidebars = {
   lifeLogSidebar: [
     "lifelog/index",
     {
-      type: "link",
+      type: "doc",
       label: "R1250RS",
-      href: "lifelog/r1250rs",
+      id: "lifelog/r1250rs/index",
     },
   ],
 

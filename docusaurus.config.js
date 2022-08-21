@@ -61,18 +61,33 @@ const config = {
             position: "left",
             label: "Develog",
             items: [
-              { label: "index.tsx", href: "/docs/develog" },
-              { label: "A11y", href: "/docs/develog/a11y" },
+              {
+                type: "doc",
+                docId: "develog/index",
+                label: "index.tsx",
+              },
+              {
+                type: "doc",
+                docId: "develog/a11y/index",
+                label: "A11y",
+              },
             ],
           },
           {
             type: "dropdown",
-            docId: "lifelog/index",
             position: "left",
             label: "Lifelog",
             items: [
-              { label: "index.tsx", href: "/docs/lifelog" },
-              { label: "R1250RS", href: "/docs/lifelog/r1250rs" },
+              {
+                type: "doc",
+                docId: "lifelog/index",
+                label: "index.tsx",
+              },
+              {
+                type: "doc",
+                docId: "lifelog/r1250rs/index",
+                label: "R1250RS",
+              },
             ],
           },
           {
