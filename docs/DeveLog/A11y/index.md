@@ -1,10 +1,8 @@
 ---
-slug: develog
+sidebar_position: 1
 ---
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+# A11y(웹 접근성)
 
-# A11y에대해...들어보셨읍니까?
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
+:::note `잘 지켜지고 있지않은 웹 접근성을 연구해보자!` 라는 패기로 시작한 웹 접근성 연구 프로젝트
+:::
