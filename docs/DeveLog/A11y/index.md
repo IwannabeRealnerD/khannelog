@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+displayed_sidebar: a11ySidebar
 ---
 
 # A11y(웹 접근성)

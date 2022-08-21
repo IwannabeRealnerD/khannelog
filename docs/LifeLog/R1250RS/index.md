@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+displayed_sidebar: r1250rsSidebar
+
 ---
 
 # R1250RS
