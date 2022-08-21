@@ -57,10 +57,13 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "develog/intro",
+            type: "dropdown",
             position: "left",
             label: "Develog",
+            items: [
+              { label: "index.tsx", href: "/docs/develog/intro" },
+              { label: "A11y", href: "/docs/develog/a11y" },
+            ],
           },
           {
             type: "doc",

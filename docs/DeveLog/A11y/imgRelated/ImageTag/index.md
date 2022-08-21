@@ -14,10 +14,11 @@ tags: [img, alt, role, A11Y]
 
 ---
 
-아래 예시의 하이라이트된 이미지는 실제 화면 낭독기를 사용하는 웹 이용자들에게 필요없는 정보입니다.
+아래 예시의 하이라이트된 이미지는 실제 화면 낭독기를 사용하는 웹 이용자들에게 필요없는 정보.
+- 디자인적인 요소로 존재하는 이미지, 로고, 전부다 해당
+- 서비스 로고의 경우 계속 화면 낭독기 사용 시 계속 반복되는 정보를 전달 -> 이미 타이틀에서 사이트를 알 수있음, 중복된 정보
 
-필요한 정보에 접근하는데 시간을 걸리게 만들어 화면 낭독기 이용자들에게는 오히려 서비스 이용 시 방해가 되는 요소 중 하나입니다.
-![image](./example.png)
+![](./example.png)
 
 ## 해결법
 
@@ -37,7 +38,7 @@ aria의 role에 `presentation`을 활용
 
 `없는 ARIA는 나쁜 ARIA 보다 좋다.`
 
-[mdn 링크](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)를 참조하세요!
+[mdn 링크](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)를 참조
 :::
 
 ### 2. alt 사용
