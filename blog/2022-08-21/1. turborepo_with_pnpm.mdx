@@ -1,0 +1,54 @@
+---
+title: Turborpo와 pnpm
+slug: turborepo_with_pnpm
+authors: khanne
+tags: [pnpm, turborepo, monorepo]
+---
+
+## ⚽️ 목표
+
+---
+
+:::info **`pnpm`**과 함께 **`Turborpo`**를 사용해 보자!
+:::
+
+<!--truncate-->
+
+## 왜 Turborepo랑 pnpm이야?
+
+---
+
+### pnpm
+
+- 이전 글에서 읽었던 pnpm의 장점과 추가로
+  - 빠르고 겹치는 node 패키지들을 hardlink, symlink를 이용하여 해결하기 때문에 용량 관리 가능!
+- yarn berry 보다 아직 까진 상대적으로 migration에 대한 위험성이 낮음 -> node_modules를 사용하는건 여전히 똑같으니, 은근 pnp가 아직 까지 문제를 많이 일으킴
+
+### turborepo
+
+:::info 비교 대상 `nx`, `turborepo`, `lerna` -> 소거법으로 선택함.
+:::
+
+- **`lerna`**는 메인테이너의 번아웃으로 인해 nx를 만든 nrwl가 관리함 [Lerna is Officially Dead](https://betterprogramming.pub/lerna-is-officially-dead-long-live-monorepos-9853c80a7b0e)
+
+- **`nx`**
+
+  - 속도 + 기능 면에선 아직까지 글 작성 면에서는 nx가 제일 많고 빠름
+  - 모노레포에서 하나의 라이브러리 버전만을 사용하기 위해 모노레포 최상단 디렉터리에 하나의 package.json을 설치
+  - 프로젝트 간 라이브러리 버전이 다를 수 도 있는데 이런식으로 진행되면 프로젝트마다 사용된 라이브러리 버전 추적이 귀찮아짐.
+  - 플러그인에 종속된 듯한 느낌을 받았음 - 물론 "그럼 만들면되는거아냐?"라는 질문에 봉착할 수 있지만서도... 그렇게 가지 해서 만들기가 흠... 고민좀 해보자
+
+- **`turborepo`**
+
+  - vercel에서 인수한 모노레포 프로젝트!
+  - nx에 비하면 조금 느리긴 하지만 여전히 속도면에서도 나쁘지 않다. - 비슷한 캐싱 전략
+  - nx의 복잡함 + 플러그인 종속성이 싫어지던 찰나에... 요런게 있다고???
+  - 복잡하지 않음에 매료 됐음 + nx를 도입하기 제일 꺼렸던 single-version-policy가 없음
+  - 요놈이닷!!!
+
+## 시작하기
+
+---
+
+무의미한 초기 설정법은 링크로 대체한다!
+[turborepo 공식문서](https://turborepo.org)

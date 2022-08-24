@@ -37,7 +37,8 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
         },
         blog: {
-          showReadingTime: true,
+          blogSidebarTitle: "모든 게시글",
+          blogSidebarCount: "ALL",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -90,6 +91,8 @@ const config = {
               },
             ],
           },
+          { to: "blog", label: "Blog", position: "left" },
+
           {
             href: "https://github.com/facebook/docusaurus",
             label: "GitHub",
