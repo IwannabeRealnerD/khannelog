@@ -3,13 +3,15 @@ sidebar_position: 2
 displayed_sidebar: a11ySidebar
 ---
 
-# ARIA
+# ARIA의 5가지 기본 규칙
 
 - 장애가 있는 사람들에게 (자바스크립트로 만들어진)웹 애플리케이션을 좀 더 접근성있게 만들기 위해 만들어진 roles와 attributes의 집합.
 - HTML의 접근성 문제를 보완하는 W3C 명세 → 보조기기의 웹 문서 접근을 지원
 - 접근성 부분에서 모자란 HTML5의 부분을 메꿔주는 보충제 같은 역할
 
 ## ARIA의 첫번째 규칙
+
+---
 
 > If you can use a native HTML element or attribute with the semantics and behavior you require already built in, instead of re-purposing an element and adding an ARIA role, state or property to make it accessible, then do so.
 
@@ -20,19 +22,15 @@ displayed_sidebar: a11ySidebar
 ```html
 <!--Do not this-->
 <div role="button">is this button?</div>
-```
 
 <!--Do this-->
 
 <button>this is button</button>
+```
 
-````
+## ARIA의 두번째 규칙
 
-### ARIA의 두번째 규칙
-
-> Do not change native semantics, unless you really have to.
-
-- 태그의 native semantic - 태그가 기본적으로 가지고 있는 의미를 바꾸지 않아야 한다. (정말 필요하지 않는 이상)
+---
 
 ```html
 <!--Do not this-->
@@ -40,15 +38,51 @@ displayed_sidebar: a11ySidebar
 
 <!--Do this-->
 <div role="tab"><h2>heading tab</h2></div>
-````
+```
 
-### ARIA의 세번째 규칙
+> Do not change native semantics, unless you really have to.
+
+- 태그의 native semantic - 태그가 기본적으로 가지고 있는 의미를 바꾸지 않아야 한다. (정말 필요하지 않는 이상)
+
+## ARIA의 세번째 규칙
+
+---
 
 > All interactive ARIA controls must be usable with the keyboard.
 
 - 상호작용이 가능한 ARIA 컨트롤 들은 키보드로 사용할 수 있어야한다.
 - 예시 - 위젯
   - 이용자가 클릭, 드래그앤 드롭, 슬라이드 ,스크롤 할 수 있는 위젯이 존재.
-  -
+  - 해당 위젯들은 키보드로 처리가 가능해야함
+
+## ARIA의 네번째 규칙
+
+---
+
+> Do not use role="presentation" or aria-hidden="true" on a visible focusable element .
+
+- aria-hidden - 실제로 보이지 않는 요소에만 사용
+  - 실제 이용자가 볼 수 있는 요소에는 사용하면 안됨
+- role = "presentation" - 실제로 보이는 요소에만 사용
+  - 실제로 유저와 상호작용 하지 않는 요소에만 사용
+  - 포커스가 되어선 안됨 - 상호작용 하지 않기 떄문
+
+## ARIA의 다섯번째 규칙
+
+---
+
+> All interactive elements must have an accessible name.
+
+```html
+<label>
+  Username
+  <input type="text" />
+</label>
+
+<label for="password">Password</label>
+```
+
+- 이용자와 상호작용 할 수 있는 요소들은 접근 가능한 이름이 존재해야만 함
+- 화면 낭독기 이용자의 경우 해당 입력 요소에 대한 정보가 없을 경우 어떤 정보를 입력하는지 알 방법 이없음
 
 [Aria 명세 링크](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
