@@ -37,3 +37,9 @@ displayed_sidebar: a11ySidebar
 
 - 장애를 가진 사람들 뿐 아니라 일반 이용자들에게도 좋은 영향을 끼침
 - 접근성이 좋은 웹 === 일반 이용자에게도 사용성이 좋은웹
+
+## 참조
+
+---
+
+[About W3C WAI - w3org](https://www.w3.org/WAI/about/)

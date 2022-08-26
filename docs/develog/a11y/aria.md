@@ -7,7 +7,9 @@ displayed_sidebar: a11ySidebar
 
 - 장애가 있는 사람들에게 (자바스크립트로 만들어진)웹 애플리케이션을 좀 더 접근성있게 만들기 위해 만들어진 roles와 attributes의 집합.
 - HTML의 접근성 문제를 보완하는 W3C 명세 → 보조기기의 웹 문서 접근을 지원
-- 접근성 부분에서 모자란 HTML5의 부분을 메꿔주는 보충제 같은 역할
+- 접근성 부분에서 모자란 HTML의 부분을 메꿔주는 보충제 같은 역할
+- 아래 5가지 기본 규칙은 WAI-ARIA 공식명세에 존재하는 규칙들
+  - 언제? 왜? 어떻게? 사용해야할지에 대한 기본 규칙
 
 ## ARIA의 첫번째 규칙
 
@@ -85,4 +87,12 @@ displayed_sidebar: a11ySidebar
 - 이용자와 상호작용 할 수 있는 요소들은 접근 가능한 이름이 존재해야만 함
 - 화면 낭독기 이용자의 경우 해당 입력 요소에 대한 정보가 없을 경우 어떤 정보를 입력하는지 알 방법 이없음
 
-[Aria 명세 링크](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
+## 참조
+
+---
+
+[MDN ARIA 설명 링크](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
+
+[ARIA 명세](https://www.w3.org/TR/using-aria/#firstrule)
+
+[Rules for Using ARIA in HTML](https://bitsofco.de/rules-for-using-aria-in-html/)
