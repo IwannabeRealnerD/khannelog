@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9376],{2282:e=>{e.exports=JSON.parse('{"label":"pnpm","permalink":"/khannelog/blog/tags/pnpm","allTagsPath":"/khannelog/blog/tags","count":2}')}}]);
