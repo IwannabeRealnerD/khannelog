@@ -11,18 +11,17 @@ displayed_sidebar: a11ySidebar
 > 지나가던 FE 개발자 : 어디서 많이 들어봤는데.. 그.. 그.. 귀찮은 eslint-plugin-jsx-a11y에 그... 귀찮은거 아니야?'
 > ~~읍읍 접니다~~
 
-## 인터넷의 아버지
+## 필요성
 
 ---
 
 ### Vint Cerf
 
-[위키피디아 링크](https://en.wikipedia.org/wiki/Vint_Cerf)
-
 > It’s a crime that the most versatile device on the planet, the computer, has not adapted well to people who need help, who need assistive technology.. It’s almost criminal that programmers have not had their feel held to the fire to build interfaces that are accommodating for people with vision problems or hering problems or motor problems
 
 - 몇년전 그의 인터뷰에서 접근성의 필요성, 현 상황에 대한 아쉬움을 느낄 수 있음.
-- Vint Cerf 본인도 청각 장애가 있었으며 그의 아내도 청각 장애가 있었음, 처음부터 인터넷은 모든이들이 사용할 수 있는 목적으로 개발되었었음.
+- Vint Cerf 본인도 청각 장애가 있었으며 그의 아내도 청각 장애가 있었음, 처음부터 인터넷은 모든 이들이 사용할 수 있는 목적으로 개발되었었음.
+
 
 ## 어떻게 해야해?
 
@@ -43,3 +42,5 @@ displayed_sidebar: a11ySidebar
 ---
 
 [About W3C WAI - w3org](https://www.w3.org/WAI/about/)
+
+[Vint Cerf 위키피디아](https://en.wikipedia.org/wiki/Vint_Cerf)

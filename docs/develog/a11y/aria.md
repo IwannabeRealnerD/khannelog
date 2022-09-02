@@ -26,8 +26,24 @@ displayed_sidebar: a11ySidebar
 <div role="button">is this button?</div>
 
 <!--Do this-->
-
 <button>this is button</button>
+```
+
+- 최신 HTML 태그로인해 실제로 사용되지 않는 role들이 존재함, 아래 role들은 이제는 사용할 일이 거의 없음 -> 대체 가능한 HTML 태그가 존재하기 떄문
+```html
+<!--Do not this-->
+<div role="banner">banner</div>
+<div role="region">section</div>
+<div role="main">main</div>
+<div role="navigation">nav</div>
+<div role="contentinfo">footer</div>
+
+<!--Do this-->
+<header>header</header>
+<section>section</section>
+<main>main</main>
+<nav>nav</nav>
+<footer>footer</footer>
 ```
 
 ## ARIA의 두번째 규칙
