@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2911],{1332:e=>{e.exports=JSON.parse('{"label":"turborepo","permalink":"/khannelog/tags/turborepo","allTagsPath":"/khannelog/tags","count":1}')}}]);
