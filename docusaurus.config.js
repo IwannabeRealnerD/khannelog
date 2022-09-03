@@ -37,6 +37,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
         },
         blog: {
+          routeBasePath: "/",
           blogSidebarTitle: "모든 게시글",
           blogSidebarCount: "ALL",
         },
@@ -91,7 +92,7 @@ const config = {
               },
             ],
           },
-          { to: "blog", label: "Blog", position: "left" },
+          { to: "/", label: "Blog", position: "left" },
 
           {
             href: "https://github.com/facebook/docusaurus",
