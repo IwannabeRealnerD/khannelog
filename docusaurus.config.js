@@ -95,7 +95,7 @@ const config = {
           { to: "/", label: "Blog", position: "left" },
 
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/iwannaberealnerd",
             label: "GitHub",
             position: "right",
           },
@@ -109,7 +109,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://github.com/iwannaberealnerd",
               },
             ],
           },
