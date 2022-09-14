@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"\ubaa8\ub4e0 \uac8c\uc2dc\uae00","items":[{"title":"Turborpo\uc640 pnpm","permalink":"/khannelog/turborepo_with_pnpm"},{"title":"pnpm vs yarn-berry","permalink":"/khannelog/pnpm_vs_yarn-berry"}]}')}}]);
