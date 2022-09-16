@@ -135,3 +135,14 @@ libName
 - 기존 npm과 다른 패키지 관리자들은 브랜치를 바꾸거나 리포지터리를 당겨왔을 때 npm i, yarn install로 패키지들을 설치 → `node_modules가 너무 무거웠기 때문에 리포지터리에 같이 업로드 불가`
 - Yarn berry에서는 패키지가 zip 파일로 압축되어 존재하기 때문에 용량이 현저히 낮음 + 중복된 패키지가 최소화됐으므로 기존 node_modules에 비해 용량이 매우 낮음 → 리포저터리에 업로드하여 사용 가능
 - 브랜치를 바꾸거나 리포지터리를 새로 당겨왔을 때 `install 없이 바로 사용 가능`
+
+## 결론
+
+:::info PNPM으로 가즈아~
+
+### yarn berry 왜안했어?
+
+- 아직 지원하지 않는 라이브러리(PnP, ZeroInstall) 때문에 아직까지 호환성 이슈가 존재(VSC... VSC... VSC, Storybook)
+- 프로젝트에서 이주 시도 시 직접 마주친 문제만 5개정도 - 그에 반해 pnpm은 사소한 이슈 1개 정도?
+- Zero Install의 필요성을 잘느끼지 못했음 -> 오히려 pnpm의 content-addressable storage가 더 매력적으로 느껴졌음
+- pnp는 pnpm에도 존재함
