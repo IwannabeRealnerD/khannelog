@@ -1,0 +1,39 @@
+---
+title: pnpm을 더 깊게...
+slug: pnpm_deeper
+authors: khanne
+tags: [pnpm, symlink]
+---
+
+## ⚽️ 목표
+
+---
+
+:::info pnpm쟝... 내가.. 좀더 알아보게 허락해주겠어?
+:::
+
+- 결국 돌고돌아(npm -> yarn -> yarn berry) pnpm으로 정착
+- [이전 글](/2022-07-24/1.pnpm_yarn.mdx)에서 pnpm을 선택한 이유를 이미 설명했으므로 생략
+- ~~추가된 pnpm 사용 이유 -> 마이너 감성 완.전.충.족.앗.흥.~~
+<!--truncate-->
+
+## hardlink
+
+### npm
+
+```bash
+# npm의 패키지 설치 방식을 확인을 위한 테스트 프로젝트 초기화
+
+mkdir npm1
+npm init -y
+npm install react
+```
+
+- node_modules 확인 시 호이스팅 된 패키지들 확인 가능
+
+  ```bash
+  cd node_modules
+  ls # js-tokens, loose-envify, react
+  ```
+
+  - js-tokens, loose-envify 패키지가 npm의 ~~shameful 한~~ 호이스팅의 결과물
