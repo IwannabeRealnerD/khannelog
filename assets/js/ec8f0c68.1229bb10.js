@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9641],{6520:e=>{e.exports=JSON.parse('{"label":"type inference","permalink":"/khannelog/tags/type-inference","allTagsPath":"/khannelog/tags","count":1}')}}]);

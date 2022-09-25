@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7299],{6312:e=>{e.exports=JSON.parse('{"label":"chromium","permalink":"/khannelog/tags/chromium","allTagsPath":"/khannelog/tags","count":1}')}}]);
