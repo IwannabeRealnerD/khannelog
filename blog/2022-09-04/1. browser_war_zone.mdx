@@ -1,0 +1,145 @@
+---
+slug: browser-warzone
+authors: khanne
+tags: [browser, chromium]
+---
+
+# 웹 표준의 중요성(퍼먹는 user-agent)
+
+## ⚽️ 목표
+
+---
+
+> **user-agent에 대해 Araboza**
+
+## TLDR;
+
+---
+
+1. 엣지는 크롬인척 하고 싶었고
+2. 크롬은 사파리인척 하고 싶었고
+3. 사파리는 KHTML인척 하고 싶었고
+4. KHTML은 Gecko인척 하고 싶었고
+5. 모든 브라우저는 모질라인척을 하고싶었다
+
+- 이젠 끔찍한 혼종이라 더 이상은 직접적인 의미는 없다 → 간접적으로 조합에 따라서 브라우저 유추는 가능
+
+## 들어가며
+
+---
+
+- 브라우저 춘추 전국시대를 표현하는 글 입니다, 많이 왔다 갔다 하니 어지러움 주의!
+- 브라우저가 처음 나왔을때는 당연히 웹표준이란건 존재하지도 않았습니다, 그리하여 브라우저 마다 렌더링 할 수 있는 능력이 달랐습니다 → 웹서버가 user-agent를 파싱하여 각 브라우저가 렌더링 할 수 있는 컨텐츠를 다르게 보내줬습니다.
+
+## **NCSA Mosaic**
+
+---
+
+```
+NCSA_Mosaic/2.0 (Windows.3.1)
+```
+
+- 이미지를 표시할 수 있던 최초의 브라우저
+- 개발 책임자였던 마크 앤드리슨이 넷스케이프 브라우저를 개발한 후 개발 중단 → MS가 기존 모자이크 저작권을 구매한 후 소스코드를 활요해 인터넷 익스플로러를 개발함 ~~불지옥의 서막~~
+
+## Mozilla(Netscape)
+
+---
+
+```
+Mozilla/1.0(Win3.1)
+```
+
+- `Mosaic Killer의 줄임말` - 나중에 Netscape로 이름변경
+- 해당 브라우저만 `프레임을 지원`해서 서버는 user-agent에 Mozilla가 보일 경우에만 프레임이 들어간 페이지를 반환했음 → user-agent 헤더에 Mozilla가 없을 경우 프레임이 존재하지 않는 페이지 반환
+
+## IE
+
+---
+
+```
+Mozilla/1.22 (compatible; MSIE 2.0; Windows 95)
+```
+
+- `초창기엔 프레임을 지원하지 않다가` 이후 `업그레이드를 통해서 지원`하게 됨 -> 당시 서버들은 요청 useragent에 mozilla가 들어간 사이트에만 프레임을 넣어 반환했으므로 IE도 `업데이트 이후 user-agent에 "Mozilla" 추가`
+- MS가 IE를 Windows 운영체제 기본 브라우저로 제공 + Mozilla보다 나은 기능을 제공 → `높은 점유율`, 넷스케이프의 몰락
+
+## Firefox
+
+---
+
+### 이름 변경의 순서
+
+- Mozilla(Mosaic killer) → Netscape → IE로 인해 몰락 → Mozilla로 다시 이름 변경 → 결국 Firefox로 변경
+
+```
+Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.1) Gecko/20020826
+```
+
+- 넷스케이프에서 `Gecko 엔진`(렌더링 엔진, 웹 표준을 잘 지키고 있었음)을 기반으로한 브라우저 모질라를 출시 -> 이후 Firefox로 이름을 바뀜
+- Firefox는 웹표준 잘 지키고 있고 IE는 썅마이웨이로 인해 서버는 user-agent에 mozilla는 신경 안쓰고 Gecko가 있을 경우에만 웹표준에 준수한 페이지를 보내줌
+
+## Konqueror
+
+---
+
+```
+Mozilla/5.0 (compatible; Konqueror/3.2; FreeBSD) (KHTML, like Gecko)
+```
+
+- KHTML도 웹 표준 준수하는 엔진인데 Gecko가 안들어갔단 이유로 IE와 같은 취급 받을거 같다는 걱정이 생김 - 그래서 맨뒤에 like Gecko를 붙임
+
+## Safari
+
+---
+
+```
+Mozilla/5.0 (Macintosh; U; PPC Mac OS X; de-de) AppleWebKit/85.7 (KHTML, like Gecko) Safari/85.5
+```
+
+### WebKit
+
+- KHTML을 기반으로 훨씬 많은 기능을 추가한 WebKit 엔진을 새로 개발된 오픈소스 엔진
+- Apple, Google, Nokia등등이 함께 개발
+- 추후에 구글은 webkit과 손절 치고 webkit에서 fork된 chromium 브라우저를 사용
+
+## Chrome
+
+---
+
+```
+Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13
+```
+
+- Webkit은 구글 + 애플과 함께 여러 벤더사들이 만들었던 오픈소스 브라우저 엔진
+- Webkit을 기반으로 브라우저를 만듬 - 사파리인척을 하고 싶었음
+
+## 크로미움 이전 EDGE
+
+---
+
+```
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; ServiceUI 11) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299
+```
+
+- 기존 IE 코드를 버리고 새로운 EDGE 브라우저를 만듬 -> 크롬과의 호환성을높였다는 것을 장점을 세워 크롬을 따라함
+- 요즘 Edge는 크로미움 엔진을 사용 → 국내 사이트 중 chrome으론 안돌아 가지만 Edge에는 돌아가는 사이트들 존재
+
+### 번외 - 오페라
+
+> **"우리는 우리 사용자들이 오페라가 어떤 브라우저 인척 하는지 선택하게 할거에요.."**
+
+- 1995년 부터 2013년 까진 자체 `presto` 엔진을 사용함
+- 현재는 `chromium` 기반
+
+## 참조
+
+---
+
+[WebAIM - History of the browser user-agent string](https://webaim.org/blog/user-agent-string-history/)
+
+[Wikipedia - Opera](<https://en.wikipedia.org/wiki/Opera_(web_browser)>)
+
+[Wikipedia - Webkit](https://en.wikipedia.org/wiki/WebKit)
+
+[WIRED - Google Chrome Breaks Up With Apple's WebKit](https://www.wired.com/2013/04/blink/)
