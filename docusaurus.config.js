@@ -39,7 +39,9 @@ const config = {
         blog: {
           routeBasePath: "/",
           blogSidebarTitle: "모든 게시글",
-          blogSidebarCount: "ALL",
+          blogSidebarCount: "ALL", showReadingTime: true, // When set to false, the "x min read" won't be shown
+          readingTime: ({content, frontMatter, defaultReadingTime}) =>
+            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -58,10 +60,10 @@ const config = {
           src: "img/logo.png",
         },
         items: [
-          { to: "/", label: "Develog", position: "left" },
+          // { to: "/", label: "Develog", position: "left" },
           {
             type: "doc",
-            docId: "lifelog/r1250rs/index",
+            docId: "r1250rs/index",
             label: "R1250RS",
           },
           {
@@ -89,7 +91,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} khannelog, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
