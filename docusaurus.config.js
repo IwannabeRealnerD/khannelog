@@ -58,42 +58,17 @@ const config = {
           src: "img/logo.png",
         },
         items: [
-          // {
-          //   type: "dropdown",
-          //   position: "left",
-          //   label: "Develog",
-          //   items: [
-          //     {
-          //       type: "doc",
-          //       docId: "develog/index",
-          //       label: "index.tsx",
-          //     },
-          //     {
-          //       type: "doc",
-          //       docId: "develog/a11y/index",
-          //       label: "A11y",
-          //     },
-          //   ],
-          // },
           { to: "/", label: "Develog", position: "left" },
           {
-            type: "dropdown",
-            position: "left",
-            label: "Lifelog",
-            items: [
-              {
-                type: "doc",
-                docId: "lifelog/index",
-                label: "index.tsx",
-              },
-              {
-                type: "doc",
-                docId: "lifelog/r1250rs/index",
-                label: "R1250RS",
-              },
-            ],
+            type: "doc",
+            docId: "lifelog/r1250rs/index",
+            label: "R1250RS",
           },
-
+          {
+            href: "https://iwannaberealnerd.notion.site/17a613c05d454bc8a3be44422b88599d",
+            label: "내가본것",
+            position: "left",
+          },
           {
             href: "https://github.com/iwannaberealnerd",
             label: "GitHub",
