@@ -58,23 +58,24 @@ const config = {
           src: "img/logo.png",
         },
         items: [
-          {
-            type: "dropdown",
-            position: "left",
-            label: "Develog",
-            items: [
-              {
-                type: "doc",
-                docId: "develog/index",
-                label: "index.tsx",
-              },
-              {
-                type: "doc",
-                docId: "develog/a11y/index",
-                label: "A11y",
-              },
-            ],
-          },
+          // {
+          //   type: "dropdown",
+          //   position: "left",
+          //   label: "Develog",
+          //   items: [
+          //     {
+          //       type: "doc",
+          //       docId: "develog/index",
+          //       label: "index.tsx",
+          //     },
+          //     {
+          //       type: "doc",
+          //       docId: "develog/a11y/index",
+          //       label: "A11y",
+          //     },
+          //   ],
+          // },
+          { to: "/", label: "Develog", position: "left" },
           {
             type: "dropdown",
             position: "left",
@@ -92,7 +93,6 @@ const config = {
               },
             ],
           },
-          { to: "/", label: "Blog", position: "left" },
 
           {
             href: "https://github.com/iwannaberealnerd",
