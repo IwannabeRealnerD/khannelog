@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9588],{5638:e=>{e.exports=JSON.parse('{"label":"noreferrer","permalink":"/khannelog/tags/noreferrer","allTagsPath":"/khannelog/tags","count":1}')}}]);

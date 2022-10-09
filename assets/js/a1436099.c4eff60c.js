@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6805],{5542:e=>{e.exports=JSON.parse('{"label":"noopener","permalink":"/khannelog/tags/noopener","allTagsPath":"/khannelog/tags","count":1}')}}]);
