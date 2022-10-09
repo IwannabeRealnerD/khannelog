@@ -1,0 +1,155 @@
+---
+title: noopener, noreferrer를 직접 갈궈보자
+slug: noopener-noreferrer
+authors: khanne
+tags: [a, noopener, noreferrer]
+---
+
+## ⚽️ 목표
+
+---
+
+:::info
+다른 페이지를 새창에 띄울 시 "noopener를 꼭해줘야 해요! **`보안적 허점`**이 생긴다구요오오옷~!" 라고 뭉뚱그리지 말고 왜 취약한지 araboza
+:::
+
+<!--truncate-->
+
+## 🔍 TLDR;
+
+> 최신 브라우저에는 noopener를 명시적으로 적어주지 않아도 target="\_blank"시 기본적으로 적용되어있다.
+
+- 그렇다고... 당신이 만든 웹의 이용자가 모두 최신 브라우저를 사용한다는 착각에 빠져있진안켔찌???!?!
+
+---
+
+## noopener
+
+### opener를 알아보자 - 1회차 시도
+
+- 일단 이게 뭔지나 해보자
+
+```html
+<!-->취약한 링크를 가지고 있는 브라우저 페이지<-->
+<a link="https://www.naver.com" target="_blank">취약한 링크! </a>
+```
+
+- 해당 링크 클릭 시 새로운창에 네이버 홈페이지가 뜸
+
+```javascript
+// 새로운 창에 뜬 네이버에서 브라우저 개발자도구 콘솔에서 실행 시
+window.opener; // null
+```
+
+- 나(네이버 웹 페이지)를 open한 부모 브라우저의 global 객차가 나와야 하는데.. 왜 null이 나오는거지?
+- ~~수많은 블로그 글들이 잘못된것인가? 아님 내가 모자란것인가?~~
+
+:::info
+safari는 2019년 부터, chrome은 2021년 초반 부터 추가된 기능으로 a 태그에 rel=noopener를 명시적으로 적어주지 않아도 자동으로 적용됨.
+:::
+
+- 오히려 a 태그에 **`rel=opener를 명시적으로 입력`**해줘야 window.opener로 부모 브라우저의 global 객체에 접근할 수 있음.
+
+### opener를 알아보자 - 2회차 시도
+
+```html
+<!-->취약한 링크를 가지고 있는 브라우저 페이지<-->
+<a link="https://www.naver.com" target="_blank" rel="opener">
+  취약한 링크!
+</a>
+```
+
+- 해당 링크 클릭 시 새로운창에 네이버 홈페이지가 뜸
+
+```javascript
+// 새로운 창에 뜬 네이버에서 브라우저 개발자도구 콘솔에서 실행 시
+window.opener; // global {window: global, self: global, location: {…}, closed: false, frames: global, …}
+```
+
+- 현재 창을 열은 부모 창을 참조할 수 있는 전역 객체
+- 네이버를 띄운 부모 브라우저의 전역 객체에 접근 가능 -> 부! 모! 브라우저를 조작 할 수있다고!?!?!?!?!?
+
+### Reverse tabnabbing
+
+> A(부모) -> B(자식) 새로운 창에 열린 자식 창이 부모창을 다른 주소로 리다이렉트 시키는 공격 기법
+
+- 부모 브라우저의 window 객체에 접근 가능하다 -> 브라우저의 전역 객체를 건들 수 있음
+- 해당 취약점이 제일 많이 사용되는 케이스는 Reverse Tabnabbing -> 부모 사이트를 피싱 사이트로 재이동 시키기
+
+### 공격 예시
+
+![](https://iwannaberealnerd.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc42829c3-53e6-499a-9f02-660eecb5058b%2FReverse-Tabnabbing.png?table=block&id=bed87d2c-5f84-4f14-b632-9c7794b63fb2&spaceId=35999598-bd0e-4e04-a70a-5396c69f115f&width=2000&userId=&cache=v2)
+
+```
+A -> 피해 웹사이트
+B -> A와 외관적으로 매우 비슷하게 생긴 공격용 사이트
+C -> A에 링크로 존재하는 Reverse tabnabbing을 수행하는 공격 사이트
+```
+
+1. 피해자가 A에서 서비스 이용 중
+2. A에 존재하는 링크를 타고 C 사이트로 이동
+3. C가 Reverse tabnabbing을 수행하여 A 부모 페이지에 존재하던 A를 B로 리다이렉트함
+
+   - A를 리다이렉트 하는 C 코드
+
+     ```html
+     <html>
+       <body>
+         <script>
+           if (window.opener) {
+             window.opener.location = "C 주소";
+           }
+         </script>
+       </body>
+     </html>
+     ```
+
+4. 피해자는 B에서 로그인 정보 입력하여 로그인 시도
+
+5. 공격자가 피해자 로그인 정보 획득
+
+## noreferrer
+
+> noopener와 쌍둥이로 같이 자주쓰이는 링크의 rel(ationship)속성
+
+- http 헤더에 referer 속성을 없애줌
+
+### http Referer 헤더
+
+> ~~referrer의 오타임, [MDN에서도](https://en.wikipedia.org/wiki/HTTP_referer) 오타래요오오옷!~~
+
+- 해당 페이지를 방문하는 이용자가 어느 페이지에서 방문한건지 추적할 수 있게 해주는 헤더
+- a 태그에 noreferrer를 사용 시 Referer 헤더가 사라져 해당 사이트에서 이전 사이트 추적이 불가능해짐
+
+### 사용이유
+
+> noopener를 지원하지 않는 브라우저에서는 noreferrer로 작성 시 noopener가 해결하는 문제를 대신 해결해줌
+
+- noopener보다 더나은 호환성
+  - 대표적인 예로 IE11에서는 noopener 속성이 존재하지 않음
+  - 이외 브라우저들도 noopener보다 noreferrer를 많이 지원함
+
+## 결론
+
+:::info 브라우저 최신 버전을 쓰자
+:::
+
+- 최신 버전의 브라우저에선 원천 봉쇄된 취약점
+- 이용자 입장 -> 브라우저 버전 최신으로 업데이트 하고 편하게 사용하면 OK
+- 개발자 입장 -> 모든 이용자가 최신 브라우저를 사용하는게 아니니 a태그에서 새로운 창으로 열때는 rel=noopener noreferrer를 꼭 추가하자!
+
+## 참조
+
+---
+
+[MDN - opener](https://developer.mozilla.org/en-US/docs/Web/API/Window/opener)
+
+[CAN I USE - HTML element: a: target="\_blank" implies rel="noopener" behavior](https://caniuse.com/mdn-html_elements_a_implicit_noopener)
+
+[OWASP - Reverse Tabnabbing](https://owasp.org/www-community/attacks/Reverse_Tabnabbing)
+
+[What is Reverse Tabnabbing and Why is it Important to be Aware Of?](https://santexgroup.com/blog/what-is-reverse-tabnabbing-and-why-is-it-important-to-be-aware-of/)
+
+[Web.dev - Links to cross-origin destinations are unsafe](https://web.dev/external-anchors-use-rel-noopener/)
+
+[StackExchange - `noopener`/`noreferrer` - What do you "really" need to use nowadays? [Discussion] [closed]](https://webmasters.stackexchange.com/questions/132802/noopener-noreferrer-what-do-you-really-need-to-use-nowadays-discussion)

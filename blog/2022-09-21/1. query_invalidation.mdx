@@ -1,0 +1,36 @@
+---
+title: React Query - select와 Optimistic Update
+slug: query-invalidation-rq
+authors: khanne
+tags: [react query]
+---
+
+## ⚽️ 목표
+
+---
+
+:::info useQuery사용 시 select로 백앤드로 부터 받아오는 데이터를 정제하여 사용하고 있던 중, Optimistic Update로 부딪혀 버린 불지옥
+:::
+
+- ~~살면서 처음으로 소주가 먹고 싶어졌다.~~ -> 뒤돌아보면 아무것도 아니였으나 왜이렇게 힘들게 느껴졌을까?
+
+<!--truncate-->
+
+## 🔍 TLDR;
+
+---
+
+> select로 정제된 데이터를 기반으로 Optimistic Update를 수행하는게 아니라 select 이전 원본 데이터를 기반으로 Optimistic Update를 수행해야함
+
+- 어디서도 제대로 써있지 않았다.
+- 이 짧은 한구절을 제외하곤 -> It affects the returned data value, but does not affect what gets stored in the query cache.
+
+#
+
+## 참조
+
+---
+
+[Github - 예제 코드](https://github.com/IwannabeRealnerD/rq-select-ou)
+
+[TanStack Query - useQuery](https://tanstack.com/query/v4/docs/reference/useQuery?from=reactQueryV3&original=https://react-query-v3.tanstack.com/reference/useQuery)
