@@ -1,41 +1,4 @@
-# Website
+# khannelog(구 블로그)
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
-
-### Installation
-
-```
-$ yarn
-```
-
-### Local Development
-
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- [Docusaurus 2](https://docusaurus.io/)를 이용한 기술(인생) 블로그.
+- 현재는 업데이트 되고있지 않으며 [새 블로그 링크](https://iwannaberealnerd.oopy.io)로 변경 되었습니다. 관심 가져주셔서 감사합니다.
